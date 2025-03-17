@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Your Nutrition Goals - NutriSnap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+                <span class="logo-small">NutriSnap</span>
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container narrow">
+                <div class="goals-container">
+                    <h1 class="page-title">Set Your Nutrition Goals</h1>
+                    <p class="subtitle">Help us personalize your NutriSnap experience by setting up your nutrition goals.</p>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-step active">1</div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">2</div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">3</div>
+                    </div>
+                    
+                    <form class="goals-form" id="goals-form">
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" id="step-1">
+                            <h2 class="step-title">Basic Information</h2>
+                            
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" min="18" max="120" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="gender" value="male" required>
+                                        <span class="radio-label">Male</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="radio-label">Female</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="gender" value="other">
+                                        <span class="radio-label">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="height">Height</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="height" name="height" min="100" max="250" required>
+                                        <span class="unit">cm</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group half">
+                                    <label for="weight">Weight</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="weight" name="weight" min="30" max="300" required>
+                                        <span class="unit">kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="activity-level">Activity Level</label>
+                                <select id="activity-level" name="activity-level" required>
+                                    <option value="" disabled selected>Select your activity level</option>
+                                    <option value="sedentary">Sedentary (little to no exercise)</option>
+                                    <option value="light">Lightly active (light exercise 1-3 days/week)</option>
+                                    <option value="moderate">Moderately active (moderate exercise 3-5 days/week)</option>
+                                    <option value="active">Active (hard exercise 6-7 days/week)</option>
+                                    <option value="very-active">Very active (very hard exercise & physical job)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="button primary next-button" data-next="step-2">Next</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Dietary Preferences -->
+                        <div class="form-step" id="step-2">
+                            <h2 class="step-title">Dietary Preferences</h2>
+                            
+                            <div class="form-group">
+                                <label for="diet-type">Diet Type</label>
+                                <select id="diet-type" name="diet-type" required>
+                                    <option value="" disabled selected>Select your diet</option>
+                                    <option value="standard">Standard (no restrictions)</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="pescatarian">Pescatarian</option>
+                                    <option value="keto">Ketogenic</option>
+                                    <option value="paleo">Paleo</option>
+                                    <option value="mediterranean">Mediterranean</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Food Allergies or Restrictions</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="gluten">
+                                        <span class="checkbox-label">Gluten</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="dairy">
+                                        <span class="checkbox-label">Dairy</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="nuts">
+                                        <span class="checkbox-label">Nuts</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="shellfish">
+                                        <span class="checkbox-label">Shellfish</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="soy">
+                                        <span class="checkbox-label">Soy</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="allergies" value="eggs">
+                                        <span class="checkbox-label">Eggs</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="other-restrictions">Other Dietary Restrictions</label>
+                                <textarea id="other-restrictions" name="other-restrictions" placeholder="Enter any other dietary restrictions or preferences"></textarea>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="button secondary prev-button" data-prev="step-1">Back</button>
+                                <button type="button" class="button primary next-button" data-next="step-3">Next</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Nutrition Goals -->
+                        <div class="form-step" id="step-3">
+                            <h2 class="step-title">Nutrition Goals</h2>
+                            
+                            <div class="form-group">
+                                <label for="goal-type">Primary Goal</label>
+                                <select id="goal-type" name="goal-type" required>
+                                    <option value="" disabled selected>Select your primary goal</option>
+                                    <option value="lose-weight">Lose Weight</option>
+                                    <option value="maintain">Maintain Weight</option>
+                                    <option value="gain-weight">Gain Weight</option>
+                                    <option value="increase-muscle">Build Muscle</option>
+                                    <option value="improve-health">Improve General Health</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Macro Distribution</label>
+                                <div class="macro-sliders">
+                                    <div class="macro-slider">
+                                        <div class="macro-label">
+                                            <span>Protein</span>
+                                            <span id="protein-value">30%</span>
+                                        </div>
+                                        <input type="range" id="protein" name="protein" min="10" max="60" value="30" class="range-slider">
+                                    </div>
+                                    
+                                    <div class="macro-slider">
+                                        <div class="macro-label">
+                                            <span>Carbs</span>
+                                            <span id="carbs-value">40%</span>
+                                        </div>
+                                        <input type="range" id="carbs" name="carbs" min="10" max="70" value="40" class="range-slider">
+                                    </div>
+                                    
+                                    <div class="macro-slider">
+                                        <div class="macro-label">
+                                            <span>Fat</span>
+                                            <span id="fat-value">30%</span>
+                                        </div>
+                                        <input type="range" id="fat" name="fat" min="10" max="60" value="30" class="range-slider">
+                                    </div>
+                                </div>
+                                <div class="macro-chart-container">
+                                    <canvas id="macro-chart" width="200" height="200"></canvas>
+                                </div>
+                                <p class="macro-notice">Note: These values are suggestions based on your goal. You can adjust them to match your specific needs.</p>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="button" class="button secondary prev-button" data-prev="step-2">Back</button>
+                                <button type="submit" class="button primary">Save & Continue</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer simple">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 NutriSnap. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form navigation
+            const nextButtons = document.querySelectorAll('.next-button');
+            const prevButtons = document.querySelectorAll('.prev-button');
+            const steps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const currentStep = button.closest('.form-step');
+                    const nextStepId = button.dataset.next;
+                    const nextStep = document.getElementById(nextStepId);
+                    
+                    // Simple validation
+                    const inputs = currentStep.querySelectorAll('input[required], select[required]');
+                    let valid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            valid = false;
+                            input.classList.add('error');
+                        } else {
+                            input.classList.remove('error');
+                        }
+                    });
+                    
+                    if (valid) {
+                        currentStep.classList.remove('active');
+                        nextStep.classList.add('active');
+                        
+                        // Update progress indicator
+                        const stepIndex = parseInt(nextStepId.split('-')[1]) - 1;
+                        progressSteps.forEach((step, index) => {
+                            if (index <= stepIndex) {
+                                step.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            prevButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const currentStep = button.closest('.form-step');
+                    const prevStepId = button.dataset.prev;
+                    const prevStep = document.getElementById(prevStepId);
+                    
+                    currentStep.classList.remove('active');
+                    prevStep.classList.add('active');
+                    
+                    // Update progress indicator
+                    const stepIndex = parseInt(prevStepId.split('-')[1]);
+                    progressSteps.forEach((step, index) => {
+                        if (index > stepIndex) {
+                            step.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Macro calculator and chart
+            const proteinSlider = document.getElementById('protein');
+            const carbsSlider = document.getElementById('carbs');
+            const fatSlider = document.getElementById('fat');
+            
+            const proteinValue = document.getElementById('protein-value');
+            const carbsValue = document.getElementById('carbs-value');
+            const fatValue = document.getElementById('fat-value');
+            
+            let macroChart;
+            
+            function initMacroChart() {
+                const ctx = document.getElementById('macro-chart').getContext('2d');
+                
+                macroChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Protein', 'Carbs', 'Fat'],
+                        datasets: [{
+                            data: [30, 40, 30],
+                            backgroundColor: [
+                                'var(--protein-color)',
+                                'var(--carbs-color)',
+                                'var(--fat-color)'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        cutout: '70%',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+            
+            function updateMacros() {
+                const protein = parseInt(proteinSlider.value);
+                const carbs = parseInt(carbsSlider.value);
+                const fat = parseInt(fatSlider.value);
+                
+                const total = protein + carbs + fat;
+                const proteinPct = Math.round((protein / total) * 100);
+                const carbsPct = Math.round((carbs / total) * 100);
+                const fatPct = Math.round((fat / total) * 100);
+                
+                proteinValue.textContent = proteinPct + '%';
+                carbsValue.textContent = carbsPct + '%';
+                fatValue.textContent = fatPct + '%';
+                
+                if (macroChart) {
+                    macroChart.data.datasets[0].data = [proteinPct, carbsPct, fatPct];
+                    macroChart.update();
+                }
+            }
+            
+            proteinSlider.addEventListener('input', updateMacros);
+            carbsSlider.addEventListener('input', updateMacros);
+            fatSlider.addEventListener('input', updateMacros);
+            
+            // Initialize chart when step 3 becomes visible
+            document.querySelector('[data-next="step-3"]').addEventListener('click', function() {
+                // Initialize chart with a slight delay to ensure DOM is ready
+                setTimeout(() => {
+                    if (!macroChart) {
+                        initMacroChart();
+                    }
+                }, 100);
+            });
+            
+            // Form submission
+            const goalsForm = document.getElementById('goals-form');
+            goalsForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically make an API call to save the user's goals
+                // For demo purposes, we'll just redirect to the profile page
+                window.location.href = 'profile.html';
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal History - NutriSnap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo">NutriSnap</a>
+            <nav class="nav profile-nav">
+                <a href="analyze.html" class="nav-link">Analyze Meal</a>
+                <a href="history.html" class="nav-link active">History</a>
+                <a href="nutrition-goals.html" class="nav-link">Goals</a>
+                <div class="user-menu">
+                    <button class="user-menu-button">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-avatar">
+                        <span class="user-name">John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                            Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <h1 class="page-title">Your Meal History</h1>
+                
+                <div class="history-filters">
+                    <div class="date-range-picker">
+                        <label for="date-range">Date Range</label>
+                        <select id="date-range" class="date-range-select">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="week" selected>This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    <div class="meal-type-filter">
+                        <label for="meal-type">Meal Type</label>
+                        <select id="meal-type" class="meal-type-select">
+                            <option value="all" selected>All Meals</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="snack">Snacks</option>
+                        </select>
+                    </div>
+                    <button class="button secondary filter-button">Apply Filters</button>
+                </div>
+                
+                <div class="history-timeline">
+                    <!-- Wednesday -->
+                    <div class="history-day">
+                        <div class="day-header">
+                            <h2 class="day-title">Wednesday, October 25, 2025</h2>
+                            <div class="day-summary">
+                                <span>1850 calories</span>
+                                <div class="day-macros">
+                                    <span class="macro protein">35% protein</span>
+                                    <span class="macro carbs">40% carbs</span>
+                                    <span class="macro fat">25% fat</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="meal-list">
+                            <div class="meal-card">
+                                <div class="meal-header">
+                                    <div class="meal-info">
+                                        <span class="meal-type">Breakfast</span>
+                                        <span class="meal-time">8:30 AM</span>
+                                    </div>
+                                    <div class="meal-calories">540 calories</div>
+                                </div>
+                                <div class="meal-content">
+                                    <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avocado toast with eggs" class="meal-image">
+                                    <div class="meal-details">
+                                        <h3 class="meal-name">Avocado Toast with Eggs</h3>
+                                        <div class="meal-macros">
+                                            <span class="macro-item">28g protein</span>
+                                            <span class="macro-item">42g carbs</span>
+                                            <span class="macro-item">25g fat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="meal-card">
+                                <div class="meal-header">
+                                    <div class="meal-info">
+                                        <span class="meal-type">Lunch</span>
+                                        <span class="meal-time">12:45 PM</span>
+                                    </div>
+                                    <div class="meal-calories">720 calories</div>
+                                </div>
+                                <div class="meal-content">
+                                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Grilled chicken salad" class="meal-image">
+                                    <div class="meal-details">
+                                        <h3 class="meal-name">Grilled Chicken Salad with Quinoa</h3>
+                                        <div class="meal-macros">
+                                            <span class="macro-item">45g protein</span>
+                                            <span class="macro-item">65g carbs</span>
+                                            <span class="macro-item">22g fat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="meal-card">
+                                <div class="meal-header">
+                                    <div class="meal-info">
+                                        <span class="meal-type">Dinner</span>
+                                        <span class="meal-time">7:15 PM</span>
+                                    </div>
+                                    <div class="meal-calories">590 calories</div>
+                                </div>
+                                <div class="meal-content">
+                                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Salmon with vegetables" class="meal-image">
+                                    <div class="meal-details">
+                                        <h3 class="meal-name">Grilled Salmon with Roasted Vegetables</h3>
+                                        <div class="meal-macros">
+                                            <span class="macro-item">35g protein</span>
+                                            <span class="macro-item">38g carbs</span>
+                                            <span class="macro-item">28g fat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tuesday -->
+                    <div class="history-day">
+                        <div class="day-header">
+                            <h2 class="day-title">Tuesday, October 24, 2025</h2>
+                            <div class="day-summary">
+                                <span>1920 calories</span>
+                                <div class="day-macros">
+                                    <span class="macro protein">32% protein</span>
+                                    <span class="macro carbs">43% carbs</span>
+                                    <span class="macro fat">25% fat</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="meal-list">
+                            <!-- More meal cards would go here -->
+                            <div class="show-more-container">
+                                <button class="button secondary show-more-button">Show More Meals</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 NutriSnap. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User menu dropdown
+            const userMenuButton = document.querySelector('.user-menu-button');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            userMenuButton.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!userMenuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

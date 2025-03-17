@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - NutriSnap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+                <span class="logo-small">NutriSnap</span>
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container narrow">
+                <div class="auth-container">
+                    <h1 class="auth-title">Create Your Account</h1>
+                    <p class="auth-description">Join NutriSnap to track your nutrition, set health goals, and get personalized recommendations.</p>
+                    
+                    <div class="social-auth">
+                        <button class="social-auth-button google">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
+                            </svg>
+                            <span>Continue with Google</span>
+                        </button>
+                        <button class="social-auth-button apple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16.3,0c0.4,2.7-0.8,5.3-2.5,6.9c-1.7,1.7-3.7,3.2-6.9,3c-0.4-2.6,0.8-5.3,2.5-7C11.1,1.2,13.9-0.1,16.3,0z M22,16.9 c-0.9,1.3-1.3,1.9-2.5,3c-1.6,1.5-3.9,3.4-6.7,3.4c-2.8,0-3.7-1.7-6.9-1.7c-3.2,0-4.1,1.7-6.9,1.7c-2.8,0-4.9-1.7-6.7-3.3 C-9.5,12.9-3-8.9,7.4-7C8.7-6.9,9.9-6.7,11-6.2c1.1-0.5,2.2-0.7,3.4-0.7c1.2,0,2.3,0.5,3.4,1c1.1,0.5,2.2,0.6,3.5,0.5 C24.5-5.9,24.4,13.6,22,16.9z"/>
+                            </svg>
+                            <span>Continue with Apple</span>
+                        </button>
+                    </div>
+                    
+                    <div class="divider">
+                        <span>or</span>
+                    </div>
+                    
+                    <form class="auth-form" id="signup-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-off-icon hidden">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="password-strength hidden" id="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" id="strength-fill"></div>
+                                </div>
+                                <span class="strength-text" id="strength-text">Password strength</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a></label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="button primary full-width">Create Account</button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.html" class="auth-link">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer simple">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 NutriSnap. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle password visibility
+            const togglePasswordButton = document.querySelector('.toggle-password');
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.querySelector('.eye-icon');
+            const eyeOffIcon = document.querySelector('.eye-off-icon');
+            const strengthBar = document.getElementById('strength-fill');
+            const strengthText = document.getElementById('strength-text');
+            const strengthContainer = document.getElementById('password-strength');
+            
+            togglePasswordButton.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                eyeIcon.classList.toggle('hidden');
+                eyeOffIcon.classList.toggle('hidden');
+            });
+            
+            // Password strength meter
+            passwordInput.addEventListener('input', function() {
+                const password = passwordInput.value;
+                
+                if (password.length === 0) {
+                    strengthContainer.classList.add('hidden');
+                    return;
+                }
+                
+                strengthContainer.classList.remove('hidden');
+                
+                // Simple password strength logic
+                let strength = 0;
+                let feedback = '';
+                
+                // Length check
+                if (password.length > 7) {
+                    strength += 25;
+                }
+                
+                // Contains lowercase
+                if (password.match(/[a-z]/)) {
+                    strength += 25;
+                }
+                
+                // Contains uppercase
+                if (password.match(/[A-Z]/)) {
+                    strength += 25;
+                }
+                
+                // Contains number or special char
+                if (password.match(/[0-9]/) || password.match(/[^a-zA-Z0-9]/)) {
+                    strength += 25;
+                }
+                
+                // Update UI
+                strengthBar.style.width = strength + '%';
+                
+                if (strength < 25) {
+                    strengthBar.style.backgroundColor = 'var(--danger)';
+                    feedback = 'Very weak';
+                } else if (strength < 50) {
+                    strengthBar.style.backgroundColor = 'var(--warning)';
+                    feedback = 'Weak';
+                } else if (strength < 75) {
+                    strengthBar.style.backgroundColor = 'var(--warning)';
+                    feedback = 'Good';
+                } else {
+                    strengthBar.style.backgroundColor = 'var(--success)';
+                    feedback = 'Strong';
+                }
+                
+                strengthText.textContent = feedback;
+            });
+            
+            // Form submission
+            const signupForm = document.getElementById('signup-form');
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically make an API call to register the user
+                const name = document.getElementById('fullname').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // For demo purposes, we'll just redirect to the nutrition goals setup page
+                // In a real application, you would validate and create the account first
+                window.location.href = 'nutrition-goals.html';
+            });
+        });
+    </script>
+</body>
+</html> 

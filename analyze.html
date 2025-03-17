@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Your Meal - NutriSnap</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo">NutriSnap</a>
+            <nav class="nav profile-nav">
+                <a href="analyze.html" class="nav-link active">Analyze Meal</a>
+                <a href="history.html" class="nav-link">History</a>
+                <a href="nutrition-goals.html" class="nav-link">Goals</a>
+                <div class="user-menu">
+                    <button class="user-menu-button">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-avatar">
+                        <span class="user-name">John Doe</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                            Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Log Out
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <h1 class="page-title">Analyze Your Meal</h1>
+                
+                <div class="analyze-container">
+                    <div class="upload-container">
+                        <div class="upload-area" id="upload-area">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                <circle cx="12" cy="13" r="3"></circle>
+                            </svg>
+                            <h3 class="upload-title">Drop your meal photo here</h3>
+                            <p class="upload-description">or click to browse from your device</p>
+                            <input type="file" id="meal-photo" class="file-input" accept="image/*" capture>
+                            <button class="button primary upload-button">Take a Photo or Upload Image</button>
+                        </div>
+                        
+                        <div class="upload-tips">
+                            <h3 class="tips-title">Tips for best results:</h3>
+                            <ul class="tips-list">
+                                <li>Ensure your photo is well-lit</li>
+                                <li>Take the photo from directly above the meal</li>
+                                <li>Include all food items in the frame</li>
+                                <li>Avoid dark backgrounds when possible</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-meals">
+                        <h3 class="recent-title">Your Recent Meals</h3>
+                        <div class="recent-meals-grid">
+                            <div class="recent-meal">
+                                <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avocado toast with eggs" class="recent-meal-image">
+                                <div class="recent-meal-info">
+                                    <span class="recent-meal-name">Avocado Toast</span>
+                                    <span class="recent-meal-date">Today, 8:30 AM</span>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-meal">
+                                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Grilled chicken salad" class="recent-meal-image">
+                                <div class="recent-meal-info">
+                                    <span class="recent-meal-name">Chicken Salad</span>
+                                    <span class="recent-meal-date">Yesterday, 12:45 PM</span>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-meal">
+                                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Salmon with vegetables" class="recent-meal-image">
+                                <div class="recent-meal-info">
+                                    <span class="recent-meal-name">Salmon Dinner</span>
+                                    <span class="recent-meal-date">Yesterday, 7:15 PM</span>
+                                </div>
+                            </div>
+                            
+                            <a href="history.html" class="view-all-link">View All History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 NutriSnap. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // User menu dropdown
+            const userMenuButton = document.querySelector('.user-menu-button');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            userMenuButton.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!userMenuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+            
+            // File upload handling
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('meal-photo');
+            
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                
+                if (e.dataTransfer.files.length) {
+                    fileInput.files = e.dataTransfer.files;
+                    handleFileUpload(e.dataTransfer.files[0]);
+                }
+            });
+            
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length) {
+                    handleFileUpload(fileInput.files[0]);
+                }
+            });
+            
+            function handleFileUpload(file) {
+                // Here you would typically send the file to your server for processing
+                // For demo purposes, we'll just redirect to the results page
+                console.log('File selected:', file.name);
+                
+                // Show loading state
+                uploadArea.classList.add('loading');
+                
+                // Simulate API processing delay
+                setTimeout(() => {
+                    window.location.href = 'example.html';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
