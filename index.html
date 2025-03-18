@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriSnap - Analyze Your Meals</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
@@ -181,7 +181,8 @@
                                 <span class="faq-icon">+</span>
                             </div>
                             <div class="faq-answer">
-                                <p>Our AI can recognize thousands of food items with over 95% accuracy. For best results, take clear photos in good lighting with minimal background clutter.</p>
+                                <p>Our AI can recognize thousands of food items with over 95% accuracy. For best results, take clear photos in good lighting with minimal background clutter. The more you use NutriSnap, the more it learns about common foods in your diet, further improving accuracy over time.</p>
+                                <p>Our system was trained on a dataset of over 5 million food images across 150 different cuisines, making it particularly good at identifying complex mixed dishes. Even when it encounters new or unusual foods, it can typically provide a close approximation based on similar items in its database.</p>
                             </div>
                         </div>
                         
@@ -191,7 +192,8 @@
                                 <span class="faq-icon">+</span>
                             </div>
                             <div class="faq-answer">
-                                <p>Yes! We take privacy seriously. Your photos are processed securely and aren't stored permanently unless you explicitly choose to save them in your account.</p>
+                                <p>Yes! We take privacy seriously. Your photos are processed securely and aren't stored permanently unless you explicitly choose to save them in your account. All data is encrypted both in transit and at rest, and we never share your personal information with third parties without your explicit consent.</p>
+                                <p>We employ industry-standard security practices including regular security audits, multi-factor authentication for our systems, and strict access controls. Your nutrition data is stored separately from your identifying information, adding an extra layer of protection. You can also request a complete export or deletion of your data at any time through your account settings.</p>
                             </div>
                         </div>
                         
@@ -201,7 +203,8 @@
                                 <span class="faq-icon">+</span>
                             </div>
                             <div class="faq-answer">
-                                <p>NutriSnap requires an internet connection to analyze photos as our AI processing happens in the cloud for maximum accuracy.</p>
+                                <p>NutriSnap requires an internet connection to analyze photos as our AI processing happens in the cloud for maximum accuracy. However, you can view your saved meal history and nutrition reports while offline. We're also working on a lightweight offline mode for basic recognition in a future update.</p>
+                                <p>The offline mode we're developing will include a smaller, device-based neural network that can recognize approximately 500 of the most common food items without requiring server connection. This feature is currently in beta testing and expected to be available to all users within the next 3 months. Premium users will get early access to this feature.</p>
                             </div>
                         </div>
                         
@@ -211,19 +214,44 @@
                                 <span class="faq-icon">+</span>
                             </div>
                             <div class="faq-answer">
-                                <p>NutriSnap uses computer vision and machine learning to identify food items in your photos. Once identified, we reference our extensive nutrition database to provide detailed nutritional information.</p>
+                                <p>NutriSnap uses computer vision and machine learning to identify food items in your photos. Once identified, we reference our extensive nutrition database to provide detailed nutritional information. Our AI has been trained on millions of food images across different cuisines and can recognize individual ingredients even in complex dishes.</p>
+                                <p>The process happens in several stages: First, our image segmentation algorithm identifies different food items on your plate. Next, each food item is classified by our deep learning model. Then, portion sizes are estimated using depth perception and size references. Finally, all this information is cross-referenced with our nutrition database that contains over 500,000 food items with complete macro and micronutrient profiles to generate your personalized nutrition report in seconds.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Can I track my meals over time?</h3>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! NutriSnap keeps a complete history of your analyzed meals, allowing you to track your nutrition patterns over time. The premium version offers advanced analytics with insights about your macro and micronutrient intake, suggestions for dietary improvements, and customized weekly reports to help you stay on track with your health goals.</p>
+                                <p>Our timeline feature lets you view your nutritional intake by day, week, month, or custom date ranges. You can track trends in specific nutrients, compare your intake against your personal goals, and see how your diet has evolved. The premium subscription also includes exportable data in various formats (CSV, PDF) for those who want to analyze their data in other applications or share with healthcare providers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Does NutriSnap support dietary restrictions?</h3>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, NutriSnap supports many dietary preferences and restrictions. You can set up your profile to flag foods that contain allergens or ingredients you avoid (like gluten, nuts, dairy, etc.). We also provide specialized tracking for keto, paleo, vegan, vegetarian, and other common dietary patterns, helping you make informed choices that align with your specific needs.</p>
+                                <p>Beyond the common allergens and diets, we also support custom ingredient exclusions, allowing you to add specific items you want to avoid. For medical diets, we offer specialized tracking modules for diabetes management, heart-healthy diets, renal diets, and more. These specialized modules include additional metrics like glycemic load, sodium intake limits, or phosphorus content that are relevant to specific health conditions. Our goal is to make nutrition tracking valuable for everyone, regardless of their dietary requirements.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- If there's a section like "About us" or "Our Story" -->
-            <section class="about-preview">
+            <!-- About Preview Section -->
+            <section class="about-preview animate-on-scroll">
                 <div class="container">
                     <h2 class="section-title">About NutriSnap</h2>
-                    <p>NutriSnap was founded in 2025 by a team of nutrition experts and technology enthusiasts with a shared mission: to make nutrition tracking simple, accurate, and accessible to everyone.</p>
-                    <!-- ... rest of the section ... -->
+                    <p>NutriSnap was founded in 2025 by a team of nutrition experts and technology enthusiasts with a shared mission: to make nutrition tracking simple, accurate, and accessible to everyone. Our innovative approach combines cutting-edge AI with nutrition science to help you make healthier choices every day.</p>
+                    <div class="mt-4">
+                        <a href="about.html" class="btn btn-primary">Learn Our Story</a>
+                    </div>
                 </div>
             </section>
         </main>

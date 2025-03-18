@@ -341,22 +341,151 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fillText('Macros', size / 2, size / 2);
     }
     
-    // FAQ Toggle
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+    // Initialize the FAQ functionality
+    initializeFaqToggle();
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            // Close all FAQ items
-            faqItems.forEach(faqItem => {
-                faqItem.classList.remove('active');
-            });
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
             
-            // If clicked item wasn't active, open it
-            if (!isActive) {
-                item.classList.add('active');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
             }
         });
     });
+    
+    // Add animation classes to elements when they enter viewport
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    function checkIfInView() {
+        animateElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('fade-in');
+            }
+        });
+    }
+    
+    // Initial check
+    checkIfInView();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkIfInView);
+    
+    // Mobile menu toggle (if exists)
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+    }
 });
+
+// Additional NutriSnap specific functionality
+function analyzeImage(imageUrl) {
+    // This would connect to your backend API in a real app
+    console.log('Analyzing image:', imageUrl);
+    
+    // Simulate loading state
+    const analysisResult = document.querySelector('.nutrition-analysis');
+    if (analysisResult) {
+        analysisResult.classList.add('loading');
+        
+        // Simulate API call delay
+        setTimeout(() => {
+            analysisResult.classList.remove('loading');
+            analysisResult.classList.add('loaded');
+        }, 2000);
+    }
+}
+
+// Track nutrition goals (placeholder)
+function updateGoalProgress(goalId, progress) {
+    const progressBar = document.querySelector(`#${goalId} .progress-bar`);
+    if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+    }
+}
+
+// Initialize health metrics charts if they exist
+function initializeCharts() {
+    const chartContainers = document.querySelectorAll('.nutrition-chart');
+    
+    if (chartContainers.length > 0) {
+        console.log('Initializing nutrition charts');
+        // This would integrate with a charting library in a real app
+    }
+}
+
+// Initialize page-specific functionality
+function initializePageSpecific() {
+    const currentPage = document.body.id;
+    
+    switch(currentPage) {
+        case 'home-page':
+            // Home page specific code
+            break;
+        case 'profile-page':
+            initializeCharts();
+            break;
+        case 'analyze-page':
+            // Setup image upload functionality
+            const uploadButton = document.querySelector('.upload-button');
+            if (uploadButton) {
+                uploadButton.addEventListener('click', () => {
+                    document.querySelector('.file-input').click();
+                });
+            }
+            break;
+    }
+}
+
+// Call when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializePageSpecific);
+
+// FAQ Toggle Functionality
+function initializeFaqToggle() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length > 0) {
+        // Set the first FAQ item as active by default
+        faqItems[0].classList.add('active');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // If this item is already active and being clicked again, just close it
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    return;
+                }
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle the current item with a slight delay for better animation
+                setTimeout(() => {
+                    item.classList.add('active');
+                }, 50);
+            });
+        });
+    }
+}
